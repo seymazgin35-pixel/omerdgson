@@ -80,11 +80,11 @@ function showExeScreen() {
 
 function showGiftScreen() {
     const gifts = [
-        { img: "assets/gift1.png", label: "Hediye #1" },
-        { img: "assets/gift2.png", label: "Hediye #2" },
-        { img: "assets/gift3.png", label: "Hediye #3" },
-        { img: "assets/gift4.png", label: "Hediye #4" },
-        { img: "assets/gift5.png", label: "Hediye #5" }
+        { img: "hediye1.png", label: "Hediye #1" },
+        { img: "hediye2.png", label: "Hediye #2" },
+        { img: "hediye3.png", label: "Hediye #3" },
+        { img: "hediye4.png", label: "Hediye #4" },
+        { img: "hediye5.png", label: "Hediye #5" }
     ];
 
     document.querySelector(".container").innerHTML = `
