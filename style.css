@@ -1,0 +1,1135 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 15% 20%, #f7c7d8 0%, transparent 25%),
+        radial-gradient(circle at 85% 75%, #d8c3df 0%, transparent 28%),
+        #f5e9ed;
+
+    color: #4a3040;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Ana kart */
+
+.container {
+    width: min(90%, 650px);
+    min-height: 520px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 30px;
+
+    position: relative;
+
+    background: rgba(255, 249, 251, 0.9);
+
+    border: 2px solid #70445a;
+    border-radius: 35px;
+
+    box-shadow:
+        0 20px 60px rgba(76, 43, 60, 0.18),
+        inset 0 0 30px rgba(255, 255, 255, 0.7);
+}
+
+/* Dekorasyon */
+
+.decorations {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+
+    font-size: 28px;
+    color: #9d5875;
+}
+
+.decorations span:nth-child(2) {
+    color: #b66b89;
+    font-size: 35px;
+}
+
+.decorations span:nth-child(3) {
+    color: #8b668f;
+}
+
+/* Küçük başlık */
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: #95647a;
+
+    margin-bottom: 8px;
+}
+
+/* Ömer */
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(70px, 12vw, 110px);
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    color: #593547;
+
+    text-shadow:
+        2px 2px 0 #e9bfd0,
+        4px 4px 0 rgba(89, 53, 71, 0.08);
+
+    margin-bottom: 5px;
+}
+
+/* Yaş */
+
+.birthday-text {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.birthday-text span {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 38px;
+    font-weight: 700;
+
+    color: #9b5270;
+}
+
+.birthday-text p {
+    font-size: 17px;
+    color: #765263;
+}
+
+/* Açıklama */
+
+.subtitle {
+    max-width: 380px;
+
+    text-align: center;
+
+    font-size: 16px;
+    line-height: 1.6;
+
+    color: #765263;
+
+    margin-bottom: 30px;
+}
+
+/* Buton */
+
+button {
+    border: 2px solid #593547;
+
+    border-radius: 50px;
+
+    padding: 15px 32px;
+
+    background: #593547;
+    color: #fff;
+
+    font-family: 'Quicksand', sans-serif;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(89, 53, 71, 0.2);
+
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.04);
+
+    background: #75465d;
+
+    box-shadow:
+        0 12px 28px rgba(89, 53, 71, 0.28);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* Küçük ekranlar */
+
+@media (max-width: 500px) {
+
+    .container {
+        min-height: 480px;
+        padding: 40px 20px;
+    }
+
+    h1 {
+        font-size: 75px;
+    }
+
+    .decorations {
+        font-size: 22px;
+    }
+}.birthday-screen img {
+    width: 70%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+}.birthday-screen {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.birthday-screen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.birthday-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}.confetti {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    width: 8px;
+    height: 12px;
+    pointer-events: none;
+    z-index: 9999;
+    animation: confettiFall 2s ease-out forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 500px) rotate(360deg);
+        opacity: 0;
+    }
+}.confetti {
+    position: fixed;
+    width: 7px;
+    height: 12px;
+    background: pink;
+    pointer-events: none;
+    z-index: 99999;
+    animation: confettiExplosion 2.5s ease-out forwards;
+}
+
+.confetti:nth-child(3n) {
+    background: gold;
+}
+
+.confetti:nth-child(3n + 1) {
+    background: #87ceeb;
+}
+
+.confetti:nth-child(3n + 2) {
+    background: #ff9fbd;
+}
+
+@keyframes confettiExplosion {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--x), var(--y)) rotate(var(--rotation));
+        opacity: 0;
+    }
+}.cake-screen {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.cake-screen h1 {
+    font-size: 42px;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+.cake-screen p {
+    color: #765263;
+    margin-bottom: 10px;
+}
+
+.cake-area {
+    position: relative;
+
+    width: 330px;
+    height: 250px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cake {
+    position: relative;
+
+    width: 250px;
+    height: 150px;
+}
+
+.cake-body {
+    position: absolute;
+
+    bottom: 0;
+    left: 15px;
+
+    width: 220px;
+    height: 100px;
+
+    background: #e7a8bd;
+
+    border-radius: 15px 15px 25px 25px;
+
+    box-shadow:
+        0 8px 0 #c9829d,
+        0 15px 20px rgba(89, 53, 71, 0.15);
+}
+
+.cake-top {
+    position: absolute;
+
+    top: 30px;
+    left: 15px;
+
+    width: 220px;
+    height: 55px;
+
+    background: #f8dce6;
+
+    border-radius: 50%;
+
+    z-index: 2;
+
+    box-shadow:
+        inset 0 -8px 0 #e9b8c9;
+}
+
+.cake-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.cake-item {
+    width: 50px;
+    height: 50px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff;
+    color: #4a3040;
+
+    border: 2px solid #e7c4d0;
+
+    border-radius: 15px;
+
+    font-size: 25px;
+
+    box-shadow: 0 5px 12px rgba(89, 53, 71, 0.12);
+}
+
+.cake-item:hover {
+    transform: translateY(-4px);
+}
+
+.cake-decoration {
+    position: absolute;
+
+    z-index: 5;
+
+    font-size: 28px;
+
+    pointer-events: none;
+
+    animation: decorationPop 0.3s ease-out;
+}
+
+@keyframes decorationPop {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+.cake-screen {
+    width: 100%;
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.cake-screen h1 {
+    font-size: 42px;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+.cake-screen p {
+    font-size: 16px;
+    color: #765263;
+    margin-bottom: 10px;
+}
+
+.cake-area {
+    position: relative;
+
+    width: 330px;
+    height: 220px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cake {
+    position: relative;
+    width: 250px;
+    height: 150px;
+}
+
+.cake-body {
+    position: absolute;
+
+    bottom: 0;
+    left: 15px;
+
+    width: 220px;
+    height: 100px;
+
+    background: #e7a8bd;
+
+    border-radius: 15px 15px 25px 25px;
+
+    box-shadow:
+        0 8px 0 #c9829d,
+        0 15px 20px rgba(89, 53, 71, 0.15);
+}
+
+.cake-top {
+    position: absolute;
+
+    top: 30px;
+    left: 15px;
+
+    width: 220px;
+    height: 55px;
+
+    background: #f8dce6;
+
+    border-radius: 50%;
+
+    z-index: 2;
+
+    box-shadow:
+        inset 0 -8px 0 #e9b8c9;
+}
+
+.cake-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.cake-item {
+    width: 50px;
+    height: 50px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff;
+
+    border: 2px solid #e7c4d0;
+
+    border-radius: 15px;
+
+    font-size: 25px;
+}
+
+.cake-item:hover {
+    transform: translateY(-4px);
+}.cake-decoration {
+    position: absolute;
+
+    z-index: 10;
+
+    font-size: 30px;
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    animation: decorationPop 0.3s ease-out;
+}
+
+@keyframes decorationPop {
+
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    70% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+}.cake-decoration {
+    position: absolute;
+    z-index: 10;
+    font-size: 30px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: decorationPop 0.3s ease-out;
+}
+
+@keyframes decorationPop {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    70% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}.reset-cake {
+    margin-top: 12px;
+
+    padding: 10px 22px;
+
+    background: transparent;
+    color: #70445a;
+
+    border: 2px solid #70445a;
+
+    font-size: 13px;
+
+    box-shadow: none;
+}
+
+.reset-cake:hover {
+    background: #70445a;
+    color: white;
+
+    transform: translateY(-2px);
+}/* 💌 DİLEK EKRANI */
+
+.wish-screen {
+    width: 100%;
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 10px;
+}
+
+.wish-title {
+    font-size: 32px;
+}
+
+.wish-screen h1 {
+    font-size: 48px;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+.wish-screen p {
+    max-width: 400px;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    color: #765263;
+
+    margin-bottom: 8px;
+}
+
+/* 📜 Mektup */
+
+.letter {
+    position: relative;
+
+    width: min(90%, 430px);
+    height: 240px;
+
+    padding: 25px 28px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffaf0 0px,
+            #fffaf0 29px,
+            #ead9c4 30px
+        );
+
+    border: 1px solid #dfc8ad;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 12px 30px rgba(89, 53, 71, 0.15),
+        inset 0 0 25px rgba(190, 150, 110, 0.08);
+
+    transform: rotate(-1deg);
+
+    text-align: left;
+}
+
+.letter-top {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #70445a;
+
+    margin-bottom: 8px;
+}
+
+.letter textarea {
+    width: 100%;
+    height: 145px;
+
+    resize: none;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-family: 'Quicksand', sans-serif;
+
+    font-size: 15px;
+    line-height: 30px;
+
+    color: #4a3040;
+}
+
+.letter textarea::placeholder {
+    color: #b2949f;
+}
+
+.letter-bottom {
+    position: absolute;
+
+    right: 20px;
+    bottom: 8px;
+
+    font-size: 22px;
+
+    color: #b66b89;
+}
+
+/* 💌 Buton */
+
+#wishButton,
+#saveWishButton {
+    margin-top: 8px;
+}
+
+.wish-button {
+    padding: 12px 25px;
+}
+
+#saveWishButton {
+    padding: 13px 28px;
+}/* 💌 FİNAL EKRANI */
+
+.final-screen {
+    width: 100%;
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 12px;
+}
+
+.final-envelope {
+    font-size: 38px;
+
+    animation: envelopeFloat 2s ease-in-out infinite;
+}
+
+.final-screen h1 {
+    font-size: 48px;
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+.final-letter {
+    width: min(90%, 450px);
+
+    padding: 30px 32px;
+
+    background: #fffaf0;
+
+    border: 1px solid #dfc8ad;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 15px 35px rgba(89, 53, 71, 0.15),
+        inset 0 0 25px rgba(190, 150, 110, 0.08);
+
+    text-align: left;
+
+    transform: rotate(-1deg);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 18px;
+    line-height: 1.65;
+
+    color: #4a3040;
+}
+
+.final-letter p {
+    margin-bottom: 18px;
+}
+
+.final-letter p:last-child {
+    margin-bottom: 0;
+}
+
+.final-heart {
+    font-size: 28px;
+
+    color: #b66b89;
+
+    animation: heartPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes envelopeFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+}
+
+@keyframes heartPulse {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+/* =========================
+   ÖMER.EXE + HEDİYE EKRANI
+   ========================= */
+
+.exe-screen {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+}
+
+.exe-window {
+    width: min(520px, 94vw);
+    padding: 34px 28px 30px;
+    border: 2px solid rgba(89, 53, 71, 0.18);
+    border-radius: 26px;
+    background: rgba(255, 250, 252, 0.92);
+    box-shadow: 0 18px 45px rgba(89, 53, 71, 0.16);
+    text-align: center;
+    animation: exeIn .5s ease both;
+}
+
+.exe-icon {
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+
+.exe-title {
+    font-size: 31px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.exe-subtitle {
+    margin-top: 6px;
+    opacity: .7;
+    font-size: 14px;
+}
+
+.exe-status {
+    margin-top: 28px;
+    font-weight: 700;
+}
+
+.exe-age {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 17px 0 20px;
+    font-size: 34px;
+}
+
+.exe-age span:first-child {
+    opacity: .45;
+}
+
+.exe-age strong {
+    font-size: 54px;
+}
+
+.exe-age .arrow {
+    opacity: .65;
+}
+
+.exe-loading {
+    width: 100%;
+    height: 15px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: #f1dfe7;
+}
+
+.exe-loading-bar {
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #e8a9bf, #c8789a);
+    transition: width .5s ease;
+}
+
+.exe-percent {
+    margin-top: 9px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.exe-small {
+    margin-top: 10px;
+    font-size: 13px;
+    opacity: .65;
+}
+
+.gifts-screen {
+    width: 100%;
+    min-height: 100%;
+    padding: 30px 18px 34px;
+    text-align: center;
+    animation: exeIn .45s ease both;
+}
+
+.gifts-screen h1 {
+    margin-bottom: 8px;
+}
+
+.gifts-screen > p {
+    margin-top: 0;
+    opacity: .7;
+}
+
+.gift-grid {
+    width: min(700px, 100%);
+    margin: 28px auto 18px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.gift-box {
+    position: relative;
+    height: 125px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: transform .2s ease;
+}
+
+.gift-box:hover {
+    transform: translateY(-5px) scale(1.03);
+}
+
+.gift-box-body {
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    bottom: 10px;
+    height: 72px;
+    border-radius: 9px;
+    background: #f4b8cb;
+    box-shadow: 0 8px 16px rgba(89, 53, 71, .13);
+}
+
+.gift-lid {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 28px;
+    height: 24px;
+    border-radius: 7px;
+    background: #ef9fba;
+    z-index: 3;
+    transition: transform .45s ease, top .45s ease;
+}
+
+.gift-ribbon-v {
+    position: absolute;
+    width: 18px;
+    top: 28px;
+    bottom: 10px;
+    left: calc(50% - 9px);
+    background: #fff0f5;
+    z-index: 4;
+}
+
+.gift-ribbon-h {
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    top: 56px;
+    height: 13px;
+    background: #fff0f5;
+    z-index: 4;
+}
+
+.gift-bow {
+    position: absolute;
+    z-index: 6;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 26px;
+    transition: transform .45s ease, opacity .3s ease;
+}
+
+.gift-box.opened {
+    cursor: default;
+}
+
+.gift-box.opened .gift-lid {
+    top: 5px;
+    transform: rotate(-9deg) translateX(-10px);
+}
+
+.gift-box.opened .gift-bow {
+    transform: translateX(-50%) translateY(-12px) rotate(-10deg);
+}
+
+.gift-progress {
+    font-size: 14px;
+    opacity: .7;
+    margin-bottom: 14px;
+}
+
+.all-gifts-button {
+    border: 0;
+    border-radius: 999px;
+    padding: 13px 23px;
+    font: inherit;
+    font-weight: 700;
+    background: #e8d5dc;
+    color: #7a5967;
+    cursor: not-allowed;
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+.all-gifts-button.ready {
+    background: #e99fba;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(200, 120, 154, .25);
+}
+
+.all-gifts-button.ready:hover {
+    transform: translateY(-2px);
+}
+
+.gift-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    background: rgba(65, 42, 51, .38);
+    backdrop-filter: blur(4px);
+}
+
+.gift-modal.hidden {
+    display: none;
+}
+
+.gift-modal-card {
+    position: relative;
+    width: min(440px, 92vw);
+    max-height: 90vh;
+    overflow: auto;
+    padding: 25px;
+    border-radius: 25px;
+    background: #fff9fb;
+    box-shadow: 0 25px 60px rgba(50, 30, 38, .22);
+    animation: giftPop .35s ease both;
+}
+
+.close-gift {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    background: #f4e3e9;
+    color: #795563;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.revealed-image-wrap {
+    width: 100%;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.revealed-image-wrap img {
+    display: block;
+    max-width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+}
+
+#giftLabel {
+    margin: 12px 0 0;
+    font-weight: 700;
+}
+
+@keyframes exeIn {
+    from { opacity: 0; transform: translateY(14px) scale(.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes giftPop {
+    from { opacity: 0; transform: scale(.88); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 650px) {
+    .gift-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 430px;
+    }
+
+    .gift-box {
+        height: 120px;
+    }
+}
+
+@media (max-width: 390px) {
+    .exe-window {
+        padding: 28px 18px;
+    }
+
+    .exe-title {
+        font-size: 26px;
+    }
+
+    .exe-age {
+        font-size: 28px;
+    }
+
+    .exe-age strong {
+        font-size: 46px;
+    }
+}
